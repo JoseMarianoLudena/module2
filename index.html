@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List CheckOff</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <link rel="stylesheet" href="style.css"> <!-- Link the new CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
             <ul>
                 <li ng-repeat="item in toBuyCtrl.items">
                     <span>🛍️ Buy {{ item.quantity }} {{ item.name }}</span>
-                    <button class="btn buy-btn" ng-click="toBuyCtrl.buyItem($index)">Bought</button>
+                    <button class="btn buy-btn" ng-click="toBuyCtrl.buyItem($index)">Buy</button>
                 </li>
             </ul>
         </div>
@@ -29,7 +29,7 @@
             <ul>
                 <li ng-repeat="item in boughtCtrl.items">
                     <span>✔️ Bought {{ item.quantity }} {{ item.name }}</span>
-                    <button class="btn unbuy-btn" ng-click="boughtCtrl.unbuyItem($index)">Unbought</button>
+                    <button class="btn unbuy-btn" ng-click="boughtCtrl.unbuyItem($index)">Cancel</button>
                 </li>
             </ul>
         </div>
