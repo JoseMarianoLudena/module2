@@ -1,49 +1,97 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-}
-
-.container {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px;
-}
-
-.list {
-    width: 40%;
+    font-family: 'Arial', sans-serif;
+    background-color: #ff6f61;
+    margin: 0;
     padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
     text-align: center;
 }
 
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Lists Styling */
+.list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+/* Different colors for sections */
+.to-buy {
+    background-color: #ffe5e0; /* Light red background */
+}
+
+.bought {
+    background-color: #e6f9e6; /* Light green background */
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+}
+
+/* Empty message styling */
+.empty-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+/* List Items */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
 li {
-    background: #e9ecef;
+    background-color: #f1f1f1;
+    margin: 10px 0;
     padding: 10px;
-    margin: 5px 0;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
 }
 
-button {
-    background: #28a745;
-    color: white;
+/* Buttons */
+.btn {
     border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: white;
     border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-button:hover {
-    background: #218838;
+/* Buy Button */
+.buy-btn {
+    background-color: #ff6f61;
+}
+
+.buy-btn:hover {
+    background-color: #e05247;
+    transform: scale(1.05);
+}
+
+/* Unbuy Button */
+.unbuy-btn {
+    background-color: #28a745;
+}
+
+.unbuy-btn:hover {
+    background-color: #1e7e34;
+    transform: scale(1.05);
 }

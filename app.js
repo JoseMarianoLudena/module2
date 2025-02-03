@@ -20,6 +20,10 @@
     function AlreadyBoughtController(ShoppingListCheckOffService) {
         var bought = this;
         bought.items = ShoppingListCheckOffService.getBoughtItems();
+
+        bought.unbuyItem = function (index) {
+           ShoppingListCheckOffService.unbuyItem(index);
+       };
     }
 
     function ShoppingListCheckOffService() {
@@ -46,6 +50,10 @@
         service.buyItem = function (index) {
             var item = toBuyItems.splice(index, 1)[0];
             boughtItems.push(item);
+        };
+        service.unbuyItem = function (index) {
+          var item = boughtItems.splice(index, 1)[0];
+          toBuyItems.push(item);
         };
     }
 

@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping List Check Off</title>
+    <title>Shopping List CheckOff</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link the new CSS file -->
 </head>
 <body>
 
     <div class="container">
         <!-- To Buy List -->
-        <div class="list">
-            <h2>To Buy</h2>
-            <p ng-if="toBuyCtrl.items.length === 0">Everything is bought!</p>
+        <div class="list to-buy" ng-controller="ToBuyController as toBuyCtrl">
+            <h2>🛒 To Buy</h2>
+            <p class="empty-message" ng-if="toBuyCtrl.items.length === 0">✅ Everything is bought!</p>
             <ul>
                 <li ng-repeat="item in toBuyCtrl.items">
-                    Buy {{ item.quantity }} {{ item.name }}
-                    <button ng-click="toBuyCtrl.buyItem($index)">Bought</button>
+                    <span>🛍️ Buy {{ item.quantity }} {{ item.name }}</span>
+                    <button class="btn buy-btn" ng-click="toBuyCtrl.buyItem($index)">Bought</button>
                 </li>
             </ul>
         </div>
 
         <!-- Already Bought List -->
-        <div class="list">
-            <h2>Already Bought</h2>
-            <p ng-if="boughtCtrl.items.length === 0">Nothing bought yet</p>
+        <div class="list bought" ng-controller="AlreadyBoughtController as boughtCtrl">
+            <h2>✔️ Already Bought</h2>
+            <p class="empty-message" ng-if="boughtCtrl.items.length === 0">🚫 Nothing bought yet</p>
             <ul>
                 <li ng-repeat="item in boughtCtrl.items">
-                    Bought {{ item.quantity }} {{ item.name }}
+                    <span>✔️ Bought {{ item.quantity }} {{ item.name }}</span>
+                    <button class="btn unbuy-btn" ng-click="boughtCtrl.unbuyItem($index)">Unbought</button>
                 </li>
             </ul>
         </div>
     </div>
 
     <script src="app.js"></script>
+
 </body>
 </html>
